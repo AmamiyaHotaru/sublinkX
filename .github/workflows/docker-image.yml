@@ -3,10 +3,10 @@ name: Build and Push Multi-Arch Docker Image
 on:
   push:
     branches:
-      - main
+      - fix-ipv6-brackets
   pull_request:
     branches:
-      - main
+      - fix-ipv6-brackets
 
 jobs:
   build:
@@ -36,5 +36,5 @@ jobs:
       - name: Build and Push Multi-Arch Docker Image
         run: |
           docker buildx build --platform linux/amd64,linux/arm64 \
-            -t jaaksi/sublinkx:latest \
+            -t amamiyahotaru/sublinkx:latest \
             --push .
